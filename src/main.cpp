@@ -43,7 +43,7 @@ CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 unsigned int nTargetSpacing = 2 * 60; 
 unsigned int nStakeMinAge = 60; 
 unsigned int nStakeMaxAge = -1; // unlimited
-unsigned int nModifierInterval = 2 * 60; // time to elapse before new modifier is computed
+unsigned int nModifierInterval = 60; // time to elapse before new modifier is computed
 
 int nCoinbaseMaturity = 5;
 CBlockIndex* pindexGenesisBlock = NULL;
@@ -966,14 +966,14 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
 // miner's coin base reward
 int64_t GetProofOfWorkReward(int64_t nFees)
 {
-    int64_t nSubsidy = 0.0001 * COIN; // after 20000 blocks, POW operates in case chain gets stuck
+    int64_t nSubsidy = 0.0001 * COIN; // after 2000 blocks, POW operates in case chain gets stuck
     
     if(pindexBest->nHeight < 1)
     {
-        nSubsidy = 20000000 * COIN; // Air drop 20 million
+        nSubsidy = 40000000 * COIN; // 
         return nSubsidy + nFees;
     }
-    else if(pindexBest->nHeight < 20000) // chance to mine POW at 35 coins a block till 20000 blocks
+    else if(pindexBest->nHeight < 2000) // 
     {
         nSubsidy = 35 * COIN; 
         return nSubsidy + nFees;

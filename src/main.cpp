@@ -40,7 +40,7 @@ CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // target limit for proof of work
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
-unsigned int nTargetSpacing = 4 * 60; 
+unsigned int nTargetSpacing = 2 * 60; 
 unsigned int nStakeMinAge = 60; 
 unsigned int nStakeMaxAge = -1; // unlimited
 unsigned int nModifierInterval = 2 * 60; // time to elapse before new modifier is computed
